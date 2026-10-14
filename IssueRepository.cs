@@ -2,9 +2,6 @@ using System.Collections.Generic;
 
 namespace MunicipalServicesApp
 {
-   
-    // Stores all reported issues for the lifetime of the application.
-   
     public static class IssueRepository
     {
         private static readonly List<Issue> _issues = new List<Issue>();

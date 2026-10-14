@@ -3,9 +3,6 @@ using System.Collections.Generic;
 
 namespace MunicipalServicesApp
 {
- 
-    // Represents a single municipal service issue reported by a resident.
-   
     public class Issue
     {
         public int Id { get; set; }
