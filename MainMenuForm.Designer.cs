@@ -6,10 +6,7 @@ namespace MunicipalServicesApp
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+            if (disposing && (components != null)) { components.Dispose(); }
             base.Dispose(disposing);
         }
 
@@ -17,6 +14,8 @@ namespace MunicipalServicesApp
 
         private void InitializeComponent()
         {
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.btnReportIssues = new System.Windows.Forms.Button();
@@ -24,6 +23,29 @@ namespace MunicipalServicesApp
             this.btnServiceStatus = new System.Windows.Forms.Button();
             this.lblFooter = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            //
+            // lblWelcome
+            //
+            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(0, 120, 215);
+            this.lblWelcome.Location = new System.Drawing.Point(40, 8);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(520, 20);
+            this.lblWelcome.TabIndex = 6;
+            this.lblWelcome.Text = "Welcome!";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //
+            // btnLogout
+            //
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.btnLogout.Location = new System.Drawing.Point(420, 365);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(100, 30);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             //
             // lblTitle
             //
@@ -63,15 +85,17 @@ namespace MunicipalServicesApp
             //
             // btnLocalEvents
             //
-            this.btnLocalEvents.Enabled = false;
+            this.btnLocalEvents.BackColor = System.Drawing.Color.FromArgb(0, 120, 215);
+            this.btnLocalEvents.Enabled = true;
             this.btnLocalEvents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocalEvents.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLocalEvents.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLocalEvents.ForeColor = System.Drawing.Color.White;
             this.btnLocalEvents.Location = new System.Drawing.Point(80, 200);
             this.btnLocalEvents.Name = "btnLocalEvents";
             this.btnLocalEvents.Size = new System.Drawing.Size(440, 55);
             this.btnLocalEvents.TabIndex = 3;
-            this.btnLocalEvents.Text = "Local Events and Announcements (Coming Soon)";
-            this.btnLocalEvents.UseVisualStyleBackColor = true;
+            this.btnLocalEvents.Text = "Local Events and Announcements";
+            this.btnLocalEvents.UseVisualStyleBackColor = false;
             this.btnLocalEvents.Click += new System.EventHandler(this.btnLocalEvents_Click);
             //
             // btnServiceStatus
@@ -91,7 +115,7 @@ namespace MunicipalServicesApp
             //
             this.lblFooter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.lblFooter.ForeColor = System.Drawing.Color.Gray;
-            this.lblFooter.Location = new System.Drawing.Point(40, 350);
+            this.lblFooter.Location = new System.Drawing.Point(40, 332);
             this.lblFooter.Name = "lblFooter";
             this.lblFooter.Size = new System.Drawing.Size(520, 30);
             this.lblFooter.TabIndex = 5;
@@ -103,7 +127,9 @@ namespace MunicipalServicesApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.ClientSize = new System.Drawing.Size(600, 410);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.lblFooter);
             this.Controls.Add(this.btnServiceStatus);
             this.Controls.Add(this.btnLocalEvents);
@@ -112,12 +138,11 @@ namespace MunicipalServicesApp
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(616, 439);
+            this.MinimumSize = new System.Drawing.Size(616, 449);
             this.Name = "MainMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Municipal Services Application - Main Menu";
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -128,5 +153,7 @@ namespace MunicipalServicesApp
         private System.Windows.Forms.Button btnLocalEvents;
         private System.Windows.Forms.Button btnServiceStatus;
         private System.Windows.Forms.Label lblFooter;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
